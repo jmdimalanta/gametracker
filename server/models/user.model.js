@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
+const uniqueValidator = require("mongoose-unique-validator");
 
 const UserSchema = new mongoose.Schema({
 
@@ -17,7 +18,8 @@ const UserSchema = new mongoose.Schema({
 
     email: {
         type: String,
-        required: [true, "Email address is required!"]
+        required: [true, "Email address is required!"],
+        unique: [true, "The email is already registered with another user..."]
     },
 
     password: {
@@ -50,5 +52,6 @@ UserSchema.pre("save", function(next){
 })
 
 const User = mongoose.model("User", UserSchema);
+UserSchema.plugin(uniqueValidator, {message: "The email is already registered with another user..."});
 
 module.exports = User;
