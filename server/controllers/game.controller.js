@@ -1,9 +1,11 @@
 const Game = require("../models/game.model");
+const jwt = require("jsonwebtoken");
 
 module.exports = {
     
     getAllGames: (req, res)=>{
         Game.find()
+            .populate("createdBy", "firstName lastName email")
             .then((allGames)=>{
                 console.log(allGames);
                 res.json(allGames);
@@ -15,7 +17,17 @@ module.exports = {
     },
 
     createNewGame: (req, res)=>{
-        Game.create(req.body)
+
+        const newGameObject = new Game(req.body);
+
+        // const decodedJWT = jwt.decode(req.cookies.usertoken,{
+        //     complete: true
+        // })
+        newGameObject.createdBy = req.jwtpayload.id;
+
+        // newGameObject.createdBy = decodedJWT.payload.id
+
+        newGameObject.save(req.body)
             .then((newGame)=>{
                 console.log(newGame);
                 res.json(newGame)

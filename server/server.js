@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 const app = express();
 
 //Middleware
@@ -10,6 +11,8 @@ app.use(express.urlencoded({extended: true}));
 app.use(cors({
     origin: "http://localhost:3000"
 }))
+
+app.use(cookieParser());
 
 //require config
 require("./config/mongoose.config")

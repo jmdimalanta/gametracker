@@ -34,6 +34,11 @@ const GameSchema = new mongoose.Schema({
     yearReleased: {
         type: Number,
         min: [1972, "Stop lying! There are no video games release before 1972!!"]
+    },
+
+    createdBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
     }
 
 }, {timestamps: true})
