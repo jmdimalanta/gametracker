@@ -15,5 +15,6 @@ app.use(cors({
 require("./config/mongoose.config")
 //require routes
 require("./routes/user.routes")(app);
+require("./routes/game.routes")(app);
 
 app.listen(process.env.MY_PORT, ()=> console.log(`You are connected to port ${process.env.MY_PORT}`))
