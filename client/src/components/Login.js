@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import axios from "axios";
 import {navigate} from '@reach/router'
 
@@ -33,13 +33,13 @@ const Login = (props)=>{
     };
 
     return(
-        <div>
-            <h1>Login</h1>
-            <p className="error-text">{errorMessage ? errorMessage: ""}</p>
+        <div className="form-control w-25 mx-auto text center my-3 border border-3">
             <form onSubmit={login}>
+            <h1 className="log">Login</h1>
+            <p className="error-text">{errorMessage ? errorMessage: ""}</p>
                 <div>
-                    <label>Email</label>
-                    <input
+                    <label className="form-label mx-auto">Email</label>
+                    <input className="form-control"
                     type = "text"
                     name = "email"
                     value = {email}
@@ -47,8 +47,8 @@ const Login = (props)=>{
                     />
                 </div>
                 <div>
-                    <label>Password</label>
-                    <input
+                    <label className="form-label mx-auto">Password</label>
+                    <input className="form-control"
                     type = "text"
                     name = "password"
                     value = {password}
@@ -56,7 +56,7 @@ const Login = (props)=>{
                     />
                 </div>
                 <div className="center">
-                    <button>Login</button>
+                    <button className="btn btn-primary my-3">Login</button>
                 </div>
             </form>
         </div>

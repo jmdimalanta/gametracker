@@ -43,11 +43,12 @@ const AllGames = (props) =>{
         <div>
             <header>
                 <h1>Welcome to Gametracker!</h1>
-                <nav><Link to={"/new"}>Add a Game</Link></nav>
-                <button onClick={logout}>Logout</button>
+                <nav><Link to={"/new"}>Add a Game</Link>
+                <button className='btn btn-primary mx-3' onClick={logout}>Logout</button>
+                </nav>
             </header>
             <h2>Here is your backlog!</h2>
-            <table className='table'>
+            <table className='table table table-bordered table-dark table-hover'>
                 <thead>
                     <tr>
                         <th>Game Title</th>

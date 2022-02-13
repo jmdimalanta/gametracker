@@ -1,6 +1,54 @@
-.App {
+html, body{
+  margin: 0px;
+  padding: 0px;
   text-align: center;
-  margin:auto;
-  height:auto;
-  width: auto;
+  background-image: url("./img/background.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+form {
+  text-align: center;
+  margin: 10px;
+}
+
+.error-text{
+  color: red;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+a{
+  text-decoration: none;
+}
+
+header{
+  border-bottom: 3px double grey;
+  text-align: center;
+  padding: 15px;
+  background-color: black;
+}
+
+h1{
+  color:white
+}
+
+h2{
+  margin-top: 15px;
+  color: white;
+}
+nav{
+  margin:10px;
+}
+
+img{
+  border: 3px black solid;
+}
+
+.reg,.log{
+  color: black;
 }

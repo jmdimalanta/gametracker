@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import axios from "axios";
 
 
@@ -55,13 +55,13 @@ const Register = (props)=>{
 
 
     return(
-        <div>
-            <h1>Register</h1>
-            {confirmReg ? <h3 style={{color:"green"}}>{confirmReg}</h3> : null}
+        <div className="form-control w-25 mx-auto text center my-3 border border-3">
             <form onSubmit={register}>
+            <h1 className="reg">Register</h1>
+            {confirmReg ? <h3 style={{color:"green"}}>{confirmReg}</h3> : null}
                 <div>
-                    <label>First Name</label>
-                    <input
+                    <label className="form-label mx-auto">First Name</label>
+                    <input className="form-control"
                         type = "text"
                         name = "firstName"
                         value = {user.firstName}
@@ -74,8 +74,8 @@ const Register = (props)=>{
                     ) : null}
                 </div>
                 <div>
-                    <label>Last Name</label>
-                    <input
+                    <label className="form-label mx-auto">Last Name</label>
+                    <input className="form-control"
                         type = "text"
                         name = "lastName"
                         value = {user.lastName}
@@ -88,8 +88,8 @@ const Register = (props)=>{
                     ) : null}
                 </div>
                 <div>
-                    <label>Email</label>
-                    <input
+                    <label className="form-label mx-auto">Email</label>
+                    <input className="form-control"
                         type = "text"
                         name = "email"
                         value = {user.email}
@@ -102,8 +102,8 @@ const Register = (props)=>{
                     ) : null}
                 </div>
                 <div>
-                    <label>Password</label>                    
-                    <input
+                    <label className="form-label mx-auto">Password</label>
+                    <input className="form-control"
                         type = "text"
                         name = "password"
                         value = {user.password}
@@ -116,8 +116,8 @@ const Register = (props)=>{
                     ) : null}
                 </div>
                 <div>
-                    <label>Confirm Password</label>
-                    <input
+                    <label className="form-label mx-auto">Confirm Password</label>
+                    <input className="form-control"
                         type = "text"
                         name = "confirmPassword"
                         value = {user.confirmPassword}
@@ -130,7 +130,7 @@ const Register = (props)=>{
                     ) : null}
                 </div>
                 <div className = "center">
-                        <button>Register</button>
+                        <button className="btn btn-primary my-3">Register</button>
                 </div>
             </form>
         </div>

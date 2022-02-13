@@ -45,16 +45,19 @@ const OneGame = (props) =>{
                 <Link to={"/new"}> Add a Game</Link> 
                 </nav>
             </header>
+            <div className='card m-5 border-5'>
+                <h2>{game.title}</h2>
+                <img src={game.image} className="rounded mx-auto d-block img-fluid" alt="game cover art" style={{width: "500px", height: "500px"}} />
+                <div className='card-body'>
+                    <p>Publisher: {game.publisher}</p>
+                    <p>Rating: {game.rating}</p>
+                    <p>Released: {game.yearReleased}</p>
+                </div>
 
-            <h2>{game.title}</h2>
-            <img src={game.image} alt="game cover art" style={{width: "200px", height: "200px"}} />
-            <p>{game.publisher}</p>
-            <p>{game.rating}</p>
-            <p>{game.yearReleased}</p>
-
-            <button onClick={deleteGame}>
-                Completed
-            </button>
+                <button className='btn btn-primary' onClick={deleteGame}>
+                    Completed
+                </button>
+            </div>
         </div>
         
     )

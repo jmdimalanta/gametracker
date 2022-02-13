@@ -46,61 +46,63 @@ const NewGame = (props) =>{
                 <nav><Link to={"/home"}>Home</Link></nav>
             </header>
 
-            <form onSubmit={submitHandler}>
-                <div>
-                    <label>Title</label>
-                    <input value={title} onChange={(e)=> setTitle(e.target.value)} type="text"/>
-                    {
-                        errors.title?
-                        <span>{errors.title.message}</span>
-                        :null
-                    }
-                </div>
-                <div>
-                    <label>Publisher</label>
-                    <input value={publisher} onChange={(e)=> setPublisher(e.target.value)} type="text"/>
-                    {
-                        errors.publisher?
-                        <span>{errors.publisher.message}</span>
-                        :null
-                    }
-                </div>
-                <div>
-                    <label>Rating</label>
-                    <select value={rating} onChange={(e)=>setRating(e.target.value)} name="rating">
-                        <option value = "None" defaultValue hidden>Select a Rating</option>
-                        <option value = "E">E</option>
-                        <option value = "E10">E10</option>
-                        <option value = "T">T</option>
-                        <option value = "M">M</option>
-                        <option value = "RP">RP</option>
-                    </select>
-                    {
-                        errors.rating?
-                        <span>{errors.rating.message}</span>
-                        :null
-                    }
-                </div>
-                <div>
-                    <label>Image</label>
-                    <input value={image} onChange={(e)=> setImage(e.target.value)} type="text"/>
-                    {
-                        errors.image?
-                        <span>{errors.image.message}</span>
-                        :null
-                    }
-                </div>
-                <div>
-                    <label>Year Released</label>
-                    <input value={yearReleased} onChange={(e)=> setYearReleased(e.target.value)} type="number"/>
-                    {
-                        errors.yearReleased?
-                        <span>{errors.yearReleased.message}</span>
-                        :null
-                    }
-                </div>
-                <button>Add Game</button>
-            </form>
+            <div className="form-control w-25 mx-auto text center my-3 border border-3">
+                <form onSubmit={submitHandler}>
+                    <div>
+                        <label className="form-label mx-auto">Title</label>
+                        <input className="form-control" value={title} onChange={(e)=> setTitle(e.target.value)} type="text"/>
+                        {
+                            errors.title?
+                            <span className= "error-text">{errors.title.message}</span>
+                            :null
+                        }
+                    </div>
+                    <div>
+                        <label className="form-label mx-auto">Publisher</label>
+                        <input className="form-control" value={publisher} onChange={(e)=> setPublisher(e.target.value)} type="text"/>
+                        {
+                            errors.publisher?
+                            <span className= "error-text">{errors.publisher.message}</span>
+                            :null
+                        }
+                    </div>
+                    <div>
+                        <label className="form-label mx-auto">Rating</label>
+                        <select className='form-select' value={rating} onChange={(e)=>setRating(e.target.value)} name="rating">
+                            <option value = "None" defaultValue hidden>Select a Rating</option>
+                            <option value = "E">E</option>
+                            <option value = "E10">E10</option>
+                            <option value = "T">T</option>
+                            <option value = "M">M</option>
+                            <option value = "RP">RP</option>
+                        </select>
+                        {
+                            errors.rating?
+                            <span className= "error-text">{errors.rating.message}</span>
+                            :null
+                        }
+                    </div>
+                    <div>
+                        <label className="form-label mx-auto">Image</label>
+                        <input className="form-control" value={image} onChange={(e)=> setImage(e.target.value)} type="text"/>
+                        {
+                            errors.image?
+                            <span className= "error-text">{errors.image.message}</span>
+                            :null
+                        }
+                    </div>
+                    <div>
+                        <label className="form-label mx-auto">Year Released</label>
+                        <input className="form-control" value={yearReleased} onChange={(e)=> setYearReleased(e.target.value)} type="number"/>
+                        {
+                            errors.yearReleased?
+                            <span className= "error-text">{errors.yearReleased.message}</span>
+                            :null
+                        }
+                    </div>
+                    <button className="btn btn-primary my-3">Add Game</button>
+                </form>
+            </div>
         </div>
     )
 }
